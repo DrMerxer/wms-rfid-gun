@@ -1,4 +1,4 @@
-package com.example.wms_rfid_gun;
+package com.example.wms_rfid_gun.ui.main;
 
 import android.content.Context;
 import android.net.Uri;
@@ -8,16 +8,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.wms_rfid_gun.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link Departure.OnFragmentInteractionListener} interface
+ * {@link DepartureFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link Departure#newInstance} factory method to
+ * Use the {@link DepartureFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Departure extends Fragment {
+public class DepartureFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -29,7 +31,7 @@ public class Departure extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public Departure() {
+    public DepartureFragment() {
         // Required empty public constructor
     }
 
@@ -42,14 +44,15 @@ public class Departure extends Fragment {
      * @return A new instance of fragment Departure.
      */
     // TODO: Rename and change types and number of parameters
-    public static Departure newInstance(String param1, String param2) {
-        Departure fragment = new Departure();
+    public static DepartureFragment newInstance(String param1, String param2) {
+        DepartureFragment fragment = new DepartureFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
