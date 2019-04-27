@@ -2,10 +2,11 @@
     <string name="app_name">WMS_RFID_GUN</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_gun">GunActivity</string>
+    <string name="confirm_button">CONFIRM</string>
     <string name="tab_text_1">Arrive</string>
     <string name="tab_text_2">Departure</string>
     <string name="tab_text_3">Check</string>
-
+    <string name="id_input">ID</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

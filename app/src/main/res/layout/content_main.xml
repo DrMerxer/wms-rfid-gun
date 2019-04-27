@@ -17,8 +17,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-
-        android:text="Hello"
         android:visibility="invisible"
         android:textSize="40sp"
         />
@@ -38,32 +36,23 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/userid"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:hint="Email"
+            android:hint="@string/id_input"
             android:layout_margin="10dp"
-            android:inputType="textWebEmailAddress"
+            android:inputType="numberSigned"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/password"
+            app:layout_constraintTop_toTopOf="@id/login"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
-
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:hint="Password"
-            android:inputType="numberPassword"
-            />
 
         <Button
             android:id="@+id/login"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="LOGIN"/>
+            android:text="@string/confirm_button" />
 
     </LinearLayout>
 

@@ -1,8 +1,6 @@
 package com.example.wms_rfid_gun;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -13,6 +11,9 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.content.Intent;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,21 +26,25 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        EditText email = findViewById(R.id.email);
-        EditText password = findViewById(R.id.password);
+        EditText email = findViewById(R.id.userid);
         Button login = findViewById(R.id.login);
         LinearLayout loginView = findViewById(R.id.login_view);
 
         TextView loginText = findViewById(R.id.login_text);
 
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-
-
+            }
+        });
     }
+
+
 
     public void openGun(View view) {
         Intent intent = new Intent(this, GunActivity.class);
-        EditText email = findViewById(R.id.email);
+        EditText email = findViewById(R.id.userid);
         String message = email.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
