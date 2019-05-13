@@ -7,6 +7,13 @@
     <string name="tab_text_2">Departure</string>
     <string name="tab_text_3">Check</string>
     <string name="id_input">ID</string>
+    <string name="scan_text">Scan</string>
+    <string name="nfc_hint">Scan barcode first.</string>
+    <string name="nfc_scan">Scan</string>
+    <string name="rfid_description_idle">RFID tag has not been identified.</string>
+    <string name="rfid_description_input">Please scan the RFID tag.</string>
+    <string name="rfid_description_onhold">Please scan the tag.</string>
+    <string name="work_page_name">Work</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

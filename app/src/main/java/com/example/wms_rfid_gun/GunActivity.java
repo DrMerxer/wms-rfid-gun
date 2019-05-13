@@ -1,12 +1,16 @@
 package com.example.wms_rfid_gun;
 
 import android.content.Intent;
+import android.nfc.NfcAdapter;
+import android.nfc.Tag;
+import android.nfc.tech.*;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,6 +32,11 @@ import org.json.JSONObject;
 
 public class GunActivity extends AppCompatActivity {
 
+
+    public static final String TAG = GunActivity.class.getSimpleName();
+    private NfcAdapter mNfcAdapter;
+    private int currIndex = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +46,36 @@ public class GunActivity extends AppCompatActivity {
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
+        tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                currIndex = tab.getPosition();
+                Log.d(TAG, Integer.toString(currIndex));
+            }
 
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent){
+        Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
+
+        if(tag != null){
+
+        }
+    }
+
+    private void initNFC(){
+        mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
     }
 
     public void makeToast(String mesg){
@@ -82,5 +120,9 @@ public class GunActivity extends AppCompatActivity {
                     }
                 }
         );
+
+        queue.add(jsonRequest);
+        queue.start();
+
     }
 }

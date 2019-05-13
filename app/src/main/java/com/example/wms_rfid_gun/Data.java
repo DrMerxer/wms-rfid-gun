@@ -5,11 +5,11 @@ import android.app.Application;
 public class Data extends Application {
     private int usrid;
 
-    public int getUsrid(){
+    public int getUsrId(){
         return this.usrid;
     }
 
-    public void setUsrid(int id){
+    public void setUsrId(int id){
         this.usrid = id;
     }
 

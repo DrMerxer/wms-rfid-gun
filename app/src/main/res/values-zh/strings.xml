@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">射频移动扫描枪</string>
+    <string name="action_settings">设置</string>
+    <string name="title_activity_gun">GunActivity</string>
+    <string name="confirm_button">确认</string>
+    <string name="tab_text_1">入库</string>
+    <string name="tab_text_2">出库</string>
+    <string name="tab_text_3">清点</string>
+    <string name="id_input">工号</string>
+    <string name="scan_text">扫描</string>
+    <string name="nfc_hint">先扫描二维码</string>
+    <string name="nfc_scan">扫描NFC</string>
+    <string name="rfid_description_idle">射频标签已识别</string>
+    <string name="rfid_description_input">射频标签未扫描</string>
+    <string name="rfid_description_onhold">条形码未扫描</string>
+    <string name="work_page_name">工作页面</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">这里什么都没有（八成是出了问题）</string>
+</resources>

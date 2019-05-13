@@ -3,10 +3,17 @@ package com.example.wms_rfid_gun.ui.main;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.nfc.FormatException;
+import android.nfc.NdefMessage;
+import android.nfc.NfcAdapter;
+import android.nfc.Tag;
+import android.nfc.tech.Ndef;
+import android.nfc.tech.NfcA;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,16 +22,17 @@ import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
+import com.example.wms_rfid_gun.GunActivity;
 import com.example.wms_rfid_gun.R;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
+import java.io.IOException;
+
 
 public class ArriveFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+
+    public static final String TAG = ArriveFragment.class.getSimpleName();
 
 
     public ArriveFragment() {
@@ -43,12 +51,29 @@ public class ArriveFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         if (getArguments() != null) {
 
         }
     }
 
+    public void onNfcDetected(Ndef ndef){
+        readFromNFC(ndef);
+    }
 
+    private void readFromNFC(Ndef ndef){
+        try{
+            ndef.connect();
+            Tag tag = ndef.getTag();
+            String tagid = tag.getId().toString();
+            Log.d(tagid,"readFromNFC:TAGID:");
+            Toast toast = Toast.makeText(this.getActivity().getApplicationContext(), tagid, Toast.LENGTH_SHORT);
+            ndef.close();
+        }catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -69,6 +94,7 @@ public class ArriveFragment extends Fragment {
                                           @Override
                                           public void onClick(View v) {
                                               IntentIntegrator.forSupportFragment(ArriveFragment.this).initiateScan();
+
 
                                           }
                                       }
