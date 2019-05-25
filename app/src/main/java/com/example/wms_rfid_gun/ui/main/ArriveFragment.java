@@ -7,6 +7,7 @@ import android.nfc.FormatException;
 import android.nfc.NdefMessage;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
+import android.nfc.tech.MifareClassic;
 import android.nfc.tech.Ndef;
 import android.nfc.tech.NfcA;
 import android.os.Bundle;
@@ -34,7 +35,6 @@ public class ArriveFragment extends Fragment {
 
     public static final String TAG = ArriveFragment.class.getSimpleName();
 
-
     public ArriveFragment() {
         // Required empty public constructor
     }
@@ -55,23 +55,6 @@ public class ArriveFragment extends Fragment {
 
         if (getArguments() != null) {
 
-        }
-    }
-
-    public void onNfcDetected(Ndef ndef){
-        readFromNFC(ndef);
-    }
-
-    private void readFromNFC(Ndef ndef){
-        try{
-            ndef.connect();
-            Tag tag = ndef.getTag();
-            String tagid = tag.getId().toString();
-            Log.d(tagid,"readFromNFC:TAGID:");
-            Toast toast = Toast.makeText(this.getActivity().getApplicationContext(), tagid, Toast.LENGTH_SHORT);
-            ndef.close();
-        }catch(IOException e) {
-            e.printStackTrace();
         }
     }
 

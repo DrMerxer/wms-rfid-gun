@@ -13,7 +13,7 @@ import com.example.wms_rfid_gun.R;
 
 public class CheckFragment extends Fragment {
 
-
+    public static final String TAG = CheckFragment.class.getSimpleName();
 
     public CheckFragment() {
         // Required empty public constructor

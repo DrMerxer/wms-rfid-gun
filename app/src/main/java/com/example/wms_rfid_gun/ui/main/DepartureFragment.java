@@ -14,7 +14,7 @@ import com.example.wms_rfid_gun.R;
 public class DepartureFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
 
-
+    public final static String TAG = DepartureFragment.class.getSimpleName();
 
     public DepartureFragment() {
         // Required empty public constructor

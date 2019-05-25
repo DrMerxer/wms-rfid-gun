@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loginText.setText("Hello, " + id.getText());
+                loginText.setText(getString(R.string.main_hello) + id.getText());
                 uni_data.setUsrId(Integer.parseInt(id.getText().toString()));
                 loginView.setVisibility(View.INVISIBLE);
                 loginText.setVisibility(View.VISIBLE);

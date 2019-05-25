@@ -6,6 +6,8 @@
     <string name="tab_text_1">Arrive</string>
     <string name="tab_text_2">Departure</string>
     <string name="tab_text_3">Check</string>
+    <string name="tab_text_4">Damage</string>
+    <string name="main_hello">Hello, </string>
     <string name="id_input">ID</string>
     <string name="scan_text">Scan</string>
     <string name="nfc_hint">Scan barcode first.</string>
